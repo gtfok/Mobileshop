@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <div>
+            <h2>Welcome to our site</h2>
+            <table>
+                <tr>
+                    <td><i>Price</i></td>
+                    <td><i>Producent</i></td>
+                    <td><i>Rom</i></td>
+                    <td><i>Colors</i></td>
+                    <td><i>Diagonal</i></td>
+
+                </tr>
+                @foreach(var b in ViewBag.Phones)
+                { 
+                  <tr>
+                    <td>
+                        <i>@b.Price</i>
+                    </td>
+                    <td>
+                        <b>@b.Producent</b>
+                    </td>
+                    <td>
+                        <i>@b.Model</i>
+
+                    </td>
+                    <td>
+                        <i>@b.Colors</i>
+
+                    </td>
+                    <td>
+                        <i>@b.Diagonal</i>
+
+                    </td>
+                    <td>
+                        <p><a href="/Home/Buy/@b.Id">Purchase</a></p>
+                    </td>
+                   </tr>
+                }
+            </table>
+        </div>  
+    
+    

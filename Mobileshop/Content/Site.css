@@ -1,0 +1,26 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:floralwhite;
+    font-family:'Freehand521 BT';
+    font-size:15px;
+    color:lightcyan;
+
+
+}
+nav {
+    display:block;
+}
+.menu{
+    padding-left:10px;
+}
+    .menu ul {
+        list-style:none;
+    }
+    .menu li {
+        display:inline
+    }
+    .menu a:hover{
+        color:white
+    }
+/* Set padding to keep content from hitting the edges */
