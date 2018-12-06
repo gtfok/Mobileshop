@@ -28,6 +28,20 @@ namespace Mobileshop.Controllers
             db.SaveChanges();
             return "Спасибо за покупку," + Purchase.Owner;
         }
+        public ActionResult Show()
+        {
+            ViewBag.Message = "хай";
+            return PartialView();
+        }
+        public ActionResult About()
+        {
+            ViewBag.Message = "бом бом";
+            return PartialView();
+        }
+        public ActionResult PartialBlock()
+        {
+            return PartialView();
+        }
 
     }
 }

@@ -4,4 +4,16 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>
+	<br /><br />
+	хелпер Html.Partial:
+	@Html.Partial("Show")
+	<br /><br />
+	хелпер - Html.RenderPartial
+	@Html.Partial("PartialBlock", new string[] { "Belarus", "USA", "Canada", "France" });
+	@{string[]Materiki=new string[] { "North America", "South America", "Euroasia", "Africa", "Australia", "Arctic" };
+		string[] Oceans = new string[] { "North Iceful Ocean", "Indianic", "Pacific", "Atlantic" };
+		@Html.Partial("PartialBlock", Materiki);
+		@Html.Partial("PartialBlock", Oceans);
+	}
+</p>
