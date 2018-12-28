@@ -1,17 +1,20 @@
-﻿@{
+﻿@using Mobileshop.Models
+@using Mobileshop.Helpers
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
         <div>
-            <h2>Welcome to our site</h2>
-            <table>
+            
+            <table class="table-bordered">
                 <tr>
-                    <td><i>Price</i></td>
-                    <td><i>Producent</i></td>
-                    <td><i>Rom</i></td>
-                    <td><i>Colors</i></td>
-                    <td><i>Diagonal</i></td>
+                    <td><p> Price </p></td>
+                    <td><p> Producent </p></td>
+                    <td><p> Model </p></td>
+                    <td><p> Colors </p></td>
+                    <td><p> Diagonal </p></td>
                 </tr>
+				<br />
                 @foreach(var b in ViewBag.Phones)
                 { 
                   <tr>
@@ -39,6 +42,12 @@
                    </tr>
                 }
             </table>
+			<br />
         </div>  
+		<div >
+			
+			@PaggingHelper.PageLinks(Html, ViewBag.PagingInfo, (Func<int, string>)(x => Url.Action("Index", new { page = x })))
+
+		</div>
     
     

@@ -155,13 +155,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PhoneController.cs" />
-    <Compile Include="Controllers\Test2Controller.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\PhonesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PaggingHelper.cs" />
     <Compile Include="Models\MobileContext.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\PhonesDbInitializer.cs" />
     <Compile Include="Models\Purchase.cs" />
@@ -209,9 +209,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
-    <Content Include="Views\Phone\IndexPhone.cshtml" />
     <Content Include="Views\Home\Show.cshtml" />
     <Content Include="Views\Home\PartialBlock.cshtml" />
+    <Content Include="Views\Phones\Create.cshtml" />
+    <Content Include="Views\Phones\Delete.cshtml" />
+    <Content Include="Views\Phones\Details.cshtml" />
+    <Content Include="Views\Phones\Edit.cshtml" />
+    <Content Include="Views\Phones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

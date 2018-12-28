@@ -2,17 +2,30 @@
 <html>
 <head>
 
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-   
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title</title>
+	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+
 </head>
 <body>
-       <nav>
-           <ul class="menu">
-               <li>@Html.ActionLink("Главная","Index","Home")</li>
-           </ul>
-       </nav>
+
+	<nav>
+		<div class="firstmenu">
+			<img src="http://effects1.ru/png/kartinka/prazdnik/girljanda_gif/girljanda_6-320.gif" />
+			<br />
+			<h2>Приветствуем на нашем сайте!</h2>
+			<ul>
+				<li>@Html.ActionLink("Главная", "Index", "Home")</li>
+				<li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+				<li>@Html.ActionLink("О нас", "About", "Home")</li>
+				<li>@Html.ActionLink("Корзина", "Index", "Home")</li>
+			</ul>
+		</div>
+		
+
+	</nav>
     @RenderBody()
 </body>
 </html>

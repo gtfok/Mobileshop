@@ -1,6 +1,7 @@
 ﻿using Mobileshop.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Mobileshop.Controllers
@@ -8,11 +9,25 @@ namespace Mobileshop.Controllers
     public class HomeController : Controller
     {
         private MobileContext db = new MobileContext();
-        public ActionResult Index()
+        public PagingInfo PagingInfo { get; set; }
+        public int pagesize = 2;
+        public ActionResult Index(int page = 1)
         {
             IEnumerable<Phone> phones = db.Phones;
-            ViewBag.Phones = phones;
+            var Phones = phones
+                .OrderBy(phone => phone.Id)
+                .Skip((page - 1) * pagesize)
+                .Take(pagesize);
+            PagingInfo = new PagingInfo
+            {
+                CurrentPage = page,
+                ItemsPerPage = pagesize,
+                TotalItems = phones.Count()
+            };
+            ViewBag.Phones = Phones;
+            ViewBag.PagingInfo = PagingInfo;
             return View();
+
         }
         [HttpGet]
         public ActionResult Buy(int Id)
@@ -40,6 +55,11 @@ namespace Mobileshop.Controllers
         }
         public ActionResult PartialBlock()
         {
+            return PartialView();
+        }
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Контакты";
             return PartialView();
         }
 

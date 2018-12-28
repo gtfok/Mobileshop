@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Phone>
+@using Mobileshop.Models
+@using Mobileshop.Helpers
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diagonal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.Phones) {
+    <tr>
+        <td>
+            @item.Price
+        </td>
+        <td>
+            @item.Producent
+        </td>
+        <td>
+             @item.Model
+        </td>
+        <td>
+            @item.Colors
+        </td>
+        <td>
+            @item.Diagonal
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+	@PaggingHelper.PageLinks(Html, ViewBag.PagingInfo, (Func<int,string>)(x => Url.Action("Index",new {page = x})))
+</div>
